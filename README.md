@@ -34,11 +34,11 @@
 不同品牌的电脑BIOS设置不同，请自行百度。
 
 <h3>2.2 安装过程</h3>
-等待片刻，进入Ubuntu系统欢迎界面，选择中文，点击右侧“安装Ubuntu”开始安装。 欢迎界面 也可以选左边先使用Ubuntu系统体验一下（此时没有安装），然后从桌面左上角双击“安装Ubuntu 16.04LTS”图标开始安装。
+等待片刻，进入Ubuntu系统欢迎界面，选择中文，点击右侧“<span style="color:red">安装Ubuntu</span>”开始安装。 欢迎界面 也可以选左边先使用Ubuntu系统体验一下（此时没有安装），然后从桌面左上角双击“安装Ubuntu 16.04LTS”图标开始安装。
 
-准备安装界面，勾选“为图形或无线硬件…”，然后点击“继续”（还需要等待一小会儿）。 准备安装界面注意：如果这步花费时间很长说明是网络问题，请关闭无线网络，拔掉网线之后再重试。
+准备安装界面，勾选“<span style="color:red">为图形或无线硬件…</span>”，然后点击“继续”（还需要等待一小会儿）。 准备安装界面注意：如果这步花费时间很长说明是网络问题，请关闭无线网络，拔掉网线之后再重试。
 
-安装类型界面，选择“其他选项”（也有教程说可以直接选择第一个“共存”，但是大部分教程认为这样会和Windows安装在一起，导致双系统间相互影响。我没有验证真假，请大家自行判断，我以后换新电脑时再具体实验），然后“继续”。 安装类型界面注意：此时若弹出“已有挂载的分区，是否卸载”窗口一定不要确定，选择“否”，然后退出安装，返回Windows系统检测自己的分区情况，见1.2
+安装类型界面，选择“<span style="color:red">其他选项</span>”，然后“<span style="color:red">继续></span>”。 
 
 接下来是关键的分配分区环节。 分配分区界面 我最大的疑问也在这里，大部分资料认为应该划分四个分区，分别为挂载为“/”，“/home”，“交换空间”和“/boot”。
 
@@ -98,13 +98,13 @@ Ubuntu(16.04及以后)：
 
 打开终端输入
 
-#先在Ubuntu下更新一下时间
-sudo apt-get install ntpdate
-#使用window的
-sudo ntpdate time.windows.com
+#先在Ubuntu下更新一下时间<br />
+sudo apt-get install ntpdate<br />
+#使用window的<br />
+sudo ntpdate time.windows.com<br />
 
-#将时间更新到硬件上
-sudo hwclock --localtime --systohc
+#将时间更新到硬件上< br />
+sudo hwclock --localtime --systohc<br />
 
 回车重启！OK了
 
