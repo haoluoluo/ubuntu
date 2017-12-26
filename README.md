@@ -157,37 +157,48 @@ sudo systemctl enable mysql
 <h3>mysql的简单操作</h3>
 参考网址 ：https://www.jianshu.com/p/694d7d0a170b
 
+<h4>登陆mysql数据库</h4>
+
+可以通过如下命令：
+
+$ mysql -u root -p
+$ mysql -h localhost -u root -p
+-u 表示选择登陆的用户名
+-p 表示登陆的用户密码
+-h 登录主机名
+<hr />
 
 <h4>常用命令</h4>
-create database new_dbname;--新建数据库
-drop database old_dbnane; --删除数据库
-show databases;--显示数据库
-use databasename;--使用数据库
-select database();--查看已选择的数据库
 
-show tables;--显示当前库的所有表
-create table tablename(fieldname1 fieldtype1,fieldname2 fieldtype2,..)[ENGINE=engine_name];--创建表
-drop table tablename; --删除表
-create table tablename select statement;--通过子查询创建表
-desc tablename;--查看表结构
-show create table tablename;--查看建表语句
+create database new_dbname;--新建数据库<br />
+drop database old_dbnane; --删除数据库<br />
+show databases;--显示数据库<br />
+use databasename;--使用数据库<br />
+select database();--查看已选择的数据库<br />
 
-alter table tablename add new_fielname new_fieldtype;--新增列
-alter table tablename add new_fielname new_fieldtype after 列名1;--在列名1后新增列
-alter table tablename modify fieldname new_fieldtype;--修改列
-alter table tablename drop fieldname;--删除列
-alter table tablename_old rename tablename_new;--表重命名
+show tables;--显示当前库的所有表<br />
+create table tablename(fieldname1 fieldtype1,fieldname2 fieldtype2,..)[ENGINE=engine_name];--创建表<br />
+drop table tablename; --删除表<br />
+create table tablename select statement;--通过子查询创建表<br />
+desc tablename;--查看表结构<br />
+show create table tablename;--查看建表语句<br />
 
-insert into tablename(fieldname1,fieldname2,fieldnamen) valuse(value1,value2,valuen);--增
-delete from tablename [where fieldname=value];--删
-update tablename set fieldname1=new_value where filename2=value;--改
-select * from tablename [where filename=value];--查
+alter table tablename add new_fielname new_fieldtype;--新增列<br />
+alter table tablename add new_fielname new_fieldtype after 列名1;--在列名1后新增列<br />
+alter table tablename modify fieldname new_fieldtype;--修改列<br />
+alter table tablename drop fieldname;--删除列<br />
+alter table tablename_old rename tablename_new;--表重命名<br />
 
-truncate table tablename;--清空表中所有数据，DDL语句
+insert into tablename(fieldname1,fieldname2,fieldnamen) valuse(value1,value2,valuen);--增<br />
+delete from tablename [where fieldname=value];--删<br />
+update tablename set fieldname1=new_value where filename2=value;--改<br />
+select * from tablename [where filename=value];--查<br />
 
-show engines;--查看mysql现在已提供的存储引擎:
-show variables like '%storage_engine%';--查看mysql当前默认的存储引擎
-show create table tablename;--查看某张表用的存储引擎（结果的"ENGINE="部分）
-alter table tablename ENGINE=InnoDB--修改引擎
-create table tablename(fieldname1 fieldtype1,fieldname2 fieldtype2,..) ENGINE=engine_name;--创建表时设置存储引擎
+truncate table tablename;--清空表中所有数据，DDL语句<br />
+
+show engines;--查看mysql现在已提供的存储引擎:<br />
+show variables like '%storage_engine%';--查看mysql当前默认的存储引擎<br />
+show create table tablename;--查看某张表用的存储引擎（结果的"ENGINE="部分）<br />
+alter table tablename ENGINE=InnoDB--修改引擎<br />
+create table tablename(fieldname1 fieldtype1,fieldname2 fieldtype2,..) ENGINE=engine_name;--创建表时设置存储引擎<br />
 
