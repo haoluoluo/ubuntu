@@ -7,7 +7,7 @@ Win7与Ubuntu 16.04双系统安装教程
 
 在Win7的基础上使用U盘安装Ubuntu系统总结。
 
-原创文章，转载请注明：转自Luozm's Blog
+原创文章，转载请注明：转自https://luozm.github.io/win-ubuntu
 
 之前听说安装双系统比较麻烦，一直没有尝试，这回终于有机会亲自安装了一次，感觉不算麻烦，但是有一些步骤还没有理解，希望以后有机会的时候可以搞明白。
 
@@ -17,7 +17,9 @@ Win7与Ubuntu 16.04双系统安装教程
 
 首先需要准备好一个2G以上的空U盘（因为之后的操作需要格式化，所以空U盘最好）。
 
-在Ubuntu官网下载Ubuntu 16.04LTS（https://www.ubuntu.com/download）的ISO安装文件。如果上面的链接有问题，可以从这里使用BT方式下载（https://www.ubuntu.com/download/alternative-downloads），或者在其他mirror站点下载。
+在Ubuntu官网下载Ubuntu 16.04LTS（https://www.ubuntu.com/download）
+的ISO安装文件。如果上面的链接有问题，可以从这里使用BT方式下载（https://www.ubuntu.com/download/alternative-downloads），
+或者在其他mirror站点下载。
 
 按照官网步骤下载Rufus（https://rufus.akeo.ie/）并使用上一步中下载好的ISO文件制作启动U盘：How to create a bootable USB stick on Windows（https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows）
 
