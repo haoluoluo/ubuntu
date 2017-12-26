@@ -7,9 +7,6 @@ Win7与Ubuntu 16.04双系统安装教程
 
 在Win7的基础上使用U盘安装Ubuntu系统总结。
 
-原创文章，转载请注明：转自https://luozm.github.io/win-ubuntu
-
-之前听说安装双系统比较麻烦，一直没有尝试，这回终于有机会亲自安装了一次，感觉不算麻烦，但是有一些步骤还没有理解，希望以后有机会的时候可以搞明白。
 
 1. 安装前准备工作
 1.1 制作启动U盘
@@ -91,15 +88,7 @@ http://blog.csdn.net/frank_good/article/details/49177753
 
 安装成功后重启电脑，如果你在之前的步骤中在安装启动引导器的设备选择“/boot分区”的话，此时会自动进入Windows系统，此时需要添加系统启动项才能进入新系统。
 
-我使用的是EasyBCD2.3，在EasyBCD 2.3/CSDN可以下载我使用的版本。安装后，打开EasyBCD，进行如下设置：
 
-（1）打开EasyBCD，点击“添加新条目”（Add New Entry）
-
-（2）在右侧选择“Linux/BSD”，类型选择为”GRUB 2“，不要选错！否则无法成功！
-
-（3）在查看设置中可以看到系统条目了，具有2个，首选windows，然后是ubuntu
-
-现在大功告成，重启电脑，选择开机时选择Ubuntu 16.04LTS即可进入Ubuntu系统。
 
 3 双系统兼容问题
 经过上面的步骤，Win7和Ubuntu双系统已经安装成功了。但是经常在两个系统间切换的朋友可能会发现它们之间有一些兼容的问题，下面介绍其中一些我遇到的问题。
@@ -113,7 +102,7 @@ Windows/Ubuntu 双系统用户会发现在 Ubuntu 里面的时间正常的情况
 
 解决方案如下：
 
-Windows：
+Windows：(此方法没有测试）
 
 修改 Windows 使用时区的方法是在注册表：
 
@@ -133,39 +122,19 @@ Ubuntu(16.04及以后)：
 
 打开终端输入
 
-sudo timedatectl set-local-rtc 1
+#先在Ubuntu下更新一下时间
+sudo apt-get install ntpdate
+#使用window的
+sudo ntpdate time.windows.com
+
+#将时间更新到硬件上
+sudo hwclock --localtime --systohc
 
 回车重启！OK了
 
-3.2 修改Ubuntu启动项（optional）
-Ubuntu的系统启动器是Grub。
 
-在早期的Ubuntu版本中，使用grub1作为默认的启动引导程序，如果想要修改系统启动菜单，直接编辑/boot/grub/menu.lst即可。
+故障现象：
+先安装Windows7 SP1 64位版，后使用U盘安装Ubuntu 14.04.1。Ubuntu安装成功后，可正常启动，而GRUB上选择Windows 7菜单项，无法启动到Win7界面，直接返回GRUB菜单界面。
 
-从9.10开始, Ubuntu使用grub2作为默认启动引导程序, 相对于grub的第一个版本，grub2改动很大。 grub2的新特性主要有：支持图形化界面，支持主题，模块化加载，跨平台兼容等，总而言之，功能的加强也使得grub2的配置变得更加复杂了。
+解决办法 <a href="http://blog.csdn.net/caimagic/article/details/39532911">这里</a>
 
-grub2主要有三部分组成：
-
-/etc/default/grub：grub的默认配置文件，可以修改一些常见的参数
-/etc/grub.d：这个文件夹下面是一些生成grub.cfg文件的可执行脚本，可以修改
-/boot/grub/grub.cfg：系统引导时读取的文件之一，由其他文件生成的，一般不在这里修改
-3.2.1 修改等待时间
-终端输入：
-
-sudo gedit /etc/default/grub
-修改文件中的：GRUB_TIMEOUT=10 （默认是为10秒的），修改为：GRUB_TIMEOUT=X (X表示你要设置的秒数，设置为负数为一直等待操作) 修改后保存。
-
-3.2.2 生成grub.cfg
-一般来说, update-grub会更新grub并生成grub.cfg
-
-终端输入：
-
-sudo update-grub 当然也可以
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-3.2.3 修改默认启动系统
-修改文件中的GRUB_DEFAULT=0
-
-0默认启动第1项，如果你的win是第5项，把这个0改为4。
-
-3.2.4 修改默认分辨率
-修改文件中的#GRUB_GFXMODE=640x480 把前面#去掉，把分辨率改为800x600或1024x768（或者修改为你屏幕的分辨率，但前提是分辨率为常见分辨率。
