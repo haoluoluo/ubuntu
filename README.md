@@ -18,21 +18,16 @@ Win7与Ubuntu 16.04双系统安装教程
 首先需要准备好一个2G以上的空U盘（因为之后的操作需要格式化，所以空U盘最好）。
 
 在Ubuntu官网下载<a href="https://www.ubuntu.com/download">Ubuntu 16.04LTS</a>
-的ISO安装文件。如果上面的链接有问题，可以从这里使用BT方式下载（https://www.ubuntu.com/download/alternative-downloads），
+的ISO安装文件。如果上面的链接有问题，可以从<a href="https://www.ubuntu.com/download/alternative-downloads">这里</a>使用BT方式下载，
 或者在其他mirror站点下载。
 
-按照官网步骤下载Rufus（https://rufus.akeo.ie/）并使用上一步中下载好的ISO文件制作启动U盘：How to create a bootable USB stick on Windows（https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows）
+按照官网步骤下载<a href="https://rufus.akeo.ie/">Rufus</a>并使用上一步中下载好的ISO文件制作启动U盘：<a href="https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows">How to create a bootable USB stick on Windows</a>
 
 1.2 电脑磁盘分区
 在安装系统之前，需要事先给它分配一定的磁盘空间。其实也可以直接在非Windows系统盘（C盘）上直接安装，但是这样的话如果以后想对Ubuntu系统有单独的操作（比如删除或者别的）就会比较麻烦，所以建议给Ubuntu系统单独分配一定的空间。
 
 在Win7系统中，我们可以通过控制面板/系统和安全/管理工具/创建并格式化硬盘分区，进入磁盘管理工具。 磁盘管理工具
-
-从图中可以看到我的磁盘有四个分区，三个主分区和一个逻辑驱动器。实际上之前我的磁盘上是四个主分区，这样的话安装新系统时就会出现这样的错误信息： 已有挂载的分区
-
-为了解决这个问题，我们需要首先清空一个主分区（非C盘），然后右键选择”删除卷”释放磁盘空间，接着这些空间会变成绿色的可用空间，再右键选择”新建卷”，把多余不需要分配给新系统的磁盘空间自动生成新的分区。因为我们留给Ubuntu系统的空间通常不需要特别多（留下100G左右的可用空间足够了），这样生成的分区就会变成逻辑驱动器。 可用空间
-
-一切正常的话，现在电脑上应该只有最多三个主分区和一个逻辑驱动器，还有100G左右的可用空间留给新系统（我留的比较多，通常50G就足够了）。
+选择一个剩余容量多的分区，右键 > 压缩卷 > 选择合适大小 ，我选择的是100G(一般50G就够用了）
 
 现在准备工作就绪，可以准备安装了。
 
@@ -40,7 +35,7 @@ Win7与Ubuntu 16.04双系统安装教程
 2.1 设置BIOS为U盘启动
 将制作好的启动U盘插在电脑上，重启电脑，开机时进入BIOS选择从U盘启动。
 
-不同品牌的电脑BIOS设置不同，请自行百度。我的电脑是ThinkPad，进入BIOS的方法是在ThinkPad开机界面按F12。移动光标选择USB HDD选项按回车即为U盘启动。 BIOS
+不同品牌的电脑BIOS设置不同，请自行百度。
 
 2.2 安装过程
 等待片刻，进入Ubuntu系统欢迎界面，选择中文，点击右侧“安装Ubuntu”开始安装。 欢迎界面 也可以选左边先使用Ubuntu系统体验一下（此时没有安装），然后从桌面左上角双击“安装Ubuntu 16.04LTS”图标开始安装。
