@@ -133,6 +133,50 @@ sudo systemctl enable mysql
 <h3>mysql的简单操作</h3>
 参考网址 ：https://www.jianshu.com/p/694d7d0a170b
 
+<h4>服务启动、停止</h4>
+  <h5>1. 启动方式</h5>
+    1、使用 service 启动：<br />
+
+      service mysql start<br />
+
+    2、使用 mysqld 脚本启动<br />
+
+    /etc/inint.d/mysql start<br />
+
+    3、使用 safe_mysqld 启动<br />
+
+    safe_mysql&<br />
+
+    查看mysql是否在监听端口命令<br />
+
+    $netstat -tl | grep mysql<br />
+    会看到如下类似内容
+
+      tcp 0 0 *:mysql *:* LISTEN <br />
+      2. 停止
+      1、使用 service 启动<br />
+
+      service mysql stop<br />
+
+      2、使用 mysqld 脚本启动<br />
+
+      /etc/inint.d/mysql stop<br />
+
+      3、mysqladmin shutdown<br />
+
+      3. 重启<br />
+      1、使用 service 启动<br />
+
+      service mysql restart<br />
+
+      2、使用 mysqld 脚本启动<br />
+
+      /etc/inint.d/mysql restart<br />
+
+作者：天花板
+链接：https://www.jianshu.com/p/694d7d0a170b
+來源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 <h4>登陆mysql数据库</h4>
 
 可以通过如下命令：
