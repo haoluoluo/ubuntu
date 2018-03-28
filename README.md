@@ -223,6 +223,7 @@ show variables like '%storage_engine%';--查看mysql当前默认的存储引擎<
 show create table tablename;--查看某张表用的存储引擎（结果的"ENGINE="部分）<br />
 alter table tablename ENGINE=InnoDB--修改引擎<br />
 create table tablename(fieldname1 fieldtype1,fieldname2 fieldtype2,..) ENGINE=engine_name;--创建表时设置存储引擎<br />
+
 ```
 <h3>删除mysql
 ```bash
