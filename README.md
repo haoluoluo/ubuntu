@@ -222,3 +222,14 @@ show create table tablename;--查看某张表用的存储引擎（结果的"ENGI
 alter table tablename ENGINE=InnoDB--修改引擎<br />
 create table tablename(fieldname1 fieldtype1,fieldname2 fieldtype2,..) ENGINE=engine_name;--创建表时设置存储引擎<br />
 
+<h3>删除mysql
+sudo rm /var/lib/mysql/ -R  
+sudo rm /etc/mysql/ -R  
+sudo apt-get autoremove mysql* --purge  
+sudo apt-get remove apparmor
+或
+tar -zcvf ~/msql_backup.tar.gz /etc/mysql /var/lib/mysql 
+sudo apt purge mysql-server mysql-client mysql-common mysql-server-core-5.7 mysql-client-core-5.7
+sudo rm -rfv /etc/mysql /var/lib/mysql
+sudo apt autoremove
+sudo apt autoclean
