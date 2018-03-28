@@ -229,7 +229,7 @@ alter table tablename ENGINE=InnoDB--修改引擎<br />
 create table tablename(fieldname1 fieldtype1,fieldname2 fieldtype2,..) ENGINE=engine_name;--创建表时设置存储引擎
 
 ```
-
+<hr />
 <h3>删除mysql
 
 
@@ -251,8 +251,7 @@ sudo apt autoclean
 <link src="https://dev.mysql.com/downloads/workbench/>mysql-workbench</link>下载网址
 下载mysql-workbench的安装包，安装
            
-```bash
-           
+```bash     
 安装mysql workbench
 sudo dpkg -i /path/mysql-workbench-community-*.deb
 
@@ -263,5 +262,4 @@ apt-get-f install
 然后重新输入命令
 
 sudo dpkg -i mysql-workbench-community-*-amd64.deb
-
 ```
