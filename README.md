@@ -250,16 +250,14 @@ sudo apt autoclean
 安装mysql-workbench
 <link src="https://dev.mysql.com/downloads/workbench/>mysql-workbench</link>下载网址
 下载mysql-workbench的安装包，安装
-           
+
 ```bash     
-安装mysql workbench
+安装mysql workbench`
 sudo dpkg -i /path/mysql-workbench-community-*.deb
 
-如果安装不成功:
-
+如果安装不成功
 apt-get-f install
 
 然后重新输入命令
-
 sudo dpkg -i mysql-workbench-community-*-amd64.deb
 ```
