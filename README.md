@@ -136,7 +136,10 @@ sudo systemctl enable mysql
 
 <h4>服务启动、停止</h4>
   <h5>1. 启动方式</h5>
+  
+  
   ```bash
+  
     1、使用 service 启动：
 
       service mysql start
@@ -226,7 +229,10 @@ alter table tablename ENGINE=InnoDB--修改引擎<br />
 create table tablename(fieldname1 fieldtype1,fieldname2 fieldtype2,..) ENGINE=engine_name;--创建表时设置存储引擎
 
 ```
+
 <h3>删除mysql
+
+
 ```bash
 sudo rm /var/lib/mysql/ -R  
 sudo rm /etc/mysql/ -R  
