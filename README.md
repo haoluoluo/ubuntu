@@ -124,11 +124,12 @@ http://www.cnblogs.com/EasonJim/p/7147787.html
 
 而在16.04版本上，由于使用了Systemd进行接管，以上脚本无法使用，那么需要使用以下脚本来禁止才能通过：
 
+```bash
 #禁止开机启动
 sudo systemctl disable mysql
 #开机启动
 sudo systemctl enable mysql
-
+```
 
 <h3>mysql的简单操作</h3>
 参考网址 ：https://www.jianshu.com/p/694d7d0a170b
@@ -136,43 +137,43 @@ sudo systemctl enable mysql
 <h4>服务启动、停止</h4>
   <h5>1. 启动方式</h5>
   ```bash
-    1、使用 service 启动：<br />
+    1、使用 service 启动：
 
-      service mysql start<br />
+      service mysql start
 
-    2、使用 mysqld 脚本启动<br />
+    2、使用 mysqld 脚本启动
 
-    /etc/inint.d/mysql start<br />
+    /etc/inint.d/mysql start
 
-    3、使用 safe_mysqld 启动<br />
+    3、使用 safe_mysqld 启动
 
-    safe_mysql&<br />
+    safe_mysql&
 
-    查看mysql是否在监听端口命令<br />
+    查看mysql是否在监听端口命令
 
-    $netstat -tl | grep mysql<br />
+    $netstat -tl | grep mysql
     会看到如下类似内容
 
-      tcp 0 0 *:mysql *:* LISTEN <br />
+      tcp 0 0 *:mysql *:* LISTEN 
       2. 停止
-      1、使用 service 启动<br />
+      1、使用 service 启动
 
-      service mysql stop<br />
+      service mysql stop
 
-      2、使用 mysqld 脚本启动<br />
+      2、使用 mysqld 脚本启动
 
-      /etc/inint.d/mysql stop<br />
+      /etc/inint.d/mysql stop
 
-      3、mysqladmin shutdown<br />
+      3、mysqladmin shutdown
 
       3. 重启<br />
-      1、使用 service 启动<br />
+      1、使用 service 启动
 
-      service mysql restart<br />
+      service mysql restart
 
-      2、使用 mysqld 脚本启动<br />
+      2、使用 mysqld 脚本启动
 
-      /etc/inint.d/mysql restart<br />
+      /etc/inint.d/mysql restart
 ```
 作者：天花板
 链接：https://www.jianshu.com/p/694d7d0a170b
@@ -182,47 +183,47 @@ sudo systemctl enable mysql
 
 可以通过如下命令：
 ```bash
-$ mysql -u root -p<br />
-$ mysql -h localhost -u root -p<br />
--u 表示选择登陆的用户名<br />
--p 表示登陆的用户密码<br />
--h 登录主机名<br />
+$ mysql -u root -p
+$ mysql -h localhost -u root -p
+-u 表示选择登陆的用户名
+-p 表示登陆的用户密码
+-h 登录主机名
 ```
 <hr />
 
 <h4>常用命令</h4>
 ```bash
-create database new_dbname;--新建数据库<br />
-drop database old_dbnane; --删除数据库<br />
-show databases;--显示数据库<br />
-use databasename;--使用数据库<br />
-select database();--查看已选择的数据库<br />
+create database new_dbname;--新建数据
+drop database old_dbnane; --删除数据库
+show databases;--显示数据库
+use databasename;--使用数据库
+select database();--查看已选择的数据库
 
-show tables;--显示当前库的所有表<br />
-create table tablename(fieldname1 fieldtype1,fieldname2 fieldtype2,..)[ENGINE=engine_name];--创建表<br />
-drop table tablename; --删除表<br />
-create table tablename select statement;--通过子查询创建表<br />
-desc tablename;--查看表结构<br />
-show create table tablename;--查看建表语句<br />
+show tables;--显示当前库的所有表
+create table tablename(fieldname1 fieldtype1,fieldname2 fieldtype2,..)[ENGINE=engine_name];--创建表
+drop table tablename; --删除表
+create table tablename select statement;--通过子查询创建表
+desc tablename;--查看表结构
+show create table tablename;--查看建表语句
 
-alter table tablename add new_fielname new_fieldtype;--新增列<br />
-alter table tablename add new_fielname new_fieldtype after 列名1;--在列名1后新增列<br />
-alter table tablename modify fieldname new_fieldtype;--修改列<br />
-alter table tablename drop fieldname;--删除列<br />
-alter table tablename_old rename tablename_new;--表重命名<br />
+alter table tablename add new_fielname new_fieldtype;--新增列
+alter table tablename add new_fielname new_fieldtype after 列名1;--在列名1后新增列
+alter table tablename modify fieldname new_fieldtype;--修改列>
+alter table tablename drop fieldname;--删除列
+alter table tablename_old rename tablename_new;--表重命名
 
-insert into tablename(fieldname1,fieldname2,fieldnamen) valuse(value1,value2,valuen);--增<br />
-delete from tablename [where fieldname=value];--删<br />
-update tablename set fieldname1=new_value where filename2=value;--改<br />
-select * from tablename [where filename=value];--查<br />
+insert into tablename(fieldname1,fieldname2,fieldnamen) valuse(value1,value2,valuen);--增
+delete from tablename [where fieldname=value];--删
+update tablename set fieldname1=new_value where filename2=value;--改
+select * from tablename [where filename=value];--查
 
-truncate table tablename;--清空表中所有数据，DDL语句<br />
+truncate table tablename;--清空表中所有数据，DDL语句
 
-show engines;--查看mysql现在已提供的存储引擎:<br />
-show variables like '%storage_engine%';--查看mysql当前默认的存储引擎<br />
-show create table tablename;--查看某张表用的存储引擎（结果的"ENGINE="部分）<br />
+show engines;--查看mysql现在已提供的存储引擎:
+show variables like '%storage_engine%';--查看mysql当前默认的存储引擎
+show create table tablename;--查看某张表用的存储引擎（结果的"ENGINE="部分）
 alter table tablename ENGINE=InnoDB--修改引擎<br />
-create table tablename(fieldname1 fieldtype1,fieldname2 fieldtype2,..) ENGINE=engine_name;--创建表时设置存储引擎<br />
+create table tablename(fieldname1 fieldtype1,fieldname2 fieldtype2,..) ENGINE=engine_name;--创建表时设置存储引擎
 
 ```
 <h3>删除mysql
