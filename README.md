@@ -195,6 +195,7 @@ $ mysql -h localhost -u root -p
 <hr />
 
 <h4>常用命令</h4>
+
 ```bash
 create database new_dbname;--新建数据
 drop database old_dbnane; --删除数据库
@@ -227,8 +228,9 @@ show variables like '%storage_engine%';--查看mysql当前默认的存储引擎
 show create table tablename;--查看某张表用的存储引擎（结果的"ENGINE="部分）
 alter table tablename ENGINE=InnoDB--修改引擎<br />
 create table tablename(fieldname1 fieldtype1,fieldname2 fieldtype2,..) ENGINE=engine_name;--创建表时设置存储引擎
-
 ```
+
+
 <hr />
 <h3>删除mysql
 
