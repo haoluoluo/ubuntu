@@ -264,3 +264,5 @@ apt-get-f install
 然后重新输入命令
 sudo dpkg -i mysql-workbench-community-*-amd64.deb
 ```
+
+https://www.mzihen.com/how-to-install-ubuntu-18-04-lts-with-windows-10-on-uefi/
