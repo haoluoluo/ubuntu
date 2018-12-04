@@ -266,3 +266,22 @@ sudo dpkg -i mysql-workbench-community-*-amd64.deb
 ```
 
 https://www.mzihen.com/how-to-install-ubuntu-18-04-lts-with-windows-10-on-uefi/
+<h3>Vim 编译安装</h3>
+https://www.vim.org/git.php
+sudo ./configure --enable-cscope  --enable-largefile --enable-mzschemeinterp \
+    --enable-xim \
+    --enable-python3interp \
+    --enable-pythoninterp \
+    --enable-rubyinterp=dynamic \
+    --enable-mzschemeinterp \
+    --enable-luainterp \
+    --enable-gui=OPTS\
+    --enable-fontset \
+    --enable-terminal \
+    --with-features=huge \
+    --with-x \
+    --with-luajit \
+    --with-compiledby="haoluoluo" \
+    --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
+    --with-python3-config-dir=/usr/lib/python3.7/config-x86_64-linux-gnu \
+    --enable-multibyte
