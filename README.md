@@ -268,6 +268,7 @@ sudo dpkg -i mysql-workbench-community-*-amd64.deb
 https://www.mzihen.com/how-to-install-ubuntu-18-04-lts-with-windows-10-on-uefi/
 <h3>Vim 编译安装</h3>
 https://www.vim.org/git.php<br/>
+```bash
 ./configure \<br/>
 --enable-multibyte \<br/>
 --enable-perlinterp=dynamic \<br/>
@@ -294,3 +295,17 @@ https://www.vim.org/git.php<br/>
 --enable-luainterp \<br/>
 --with-luajit \<br/>
 --enable-fail-if-missing
+<h3>Vim Github ssh</h3>
+```
+‵‵‵bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+Linux进入.ssh文件夹：cd ~/.ssh，新建config文件：touch config；或者：touch ~/.ssh/config。这里要注意，没有.ssh文件夹的要新建一个.ssh名的文件夹。
+‵‵‵bash
+Host github.com
+    HostName github.com
+    User xxxx@xxxx.com
+    PreferredAuthentications publickey
+    IdentityFile /home/xxxx/.ssh/id_rsa_github
+```
