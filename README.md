@@ -267,21 +267,30 @@ sudo dpkg -i mysql-workbench-community-*-amd64.deb
 
 https://www.mzihen.com/how-to-install-ubuntu-18-04-lts-with-windows-10-on-uefi/
 <h3>Vim 编译安装</h3>
-https://www.vim.org/git.php
-sudo ./configure --enable-cscope  --enable-largefile --enable-mzschemeinterp \
-    --enable-xim \
-    --enable-python3interp \
-    --enable-pythoninterp \
-    --enable-rubyinterp=dynamic \
-    --enable-mzschemeinterp \
-    --enable-luainterp \
-    --enable-gui=OPTS\
-    --enable-fontset \
-    --enable-terminal \
-    --with-features=huge \
-    --with-x \
-    --with-luajit \
-    --with-compiledby="haoluoluo" \
-    --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
-    --with-python3-config-dir=/usr/lib/python3.7/config-x86_64-linux-gnu \
-    --enable-multibyte
+https://www.vim.org/git.php<br/>
+./configure \<br/>
+--enable-multibyte \<br/>
+--enable-perlinterp=dynamic \<br/>
+--enable-rubyinterp=dynamic \<br/>
+--with-ruby-command=/usr/bin/ruby \<br/>
+--enable-pythoninterp=dynamic \<br/>
+--with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \<br/>
+--enable-python3interp \<br/>
+--with-python3-config-dir=/usr/lib/python3.8/config-3.8-x86_64-linux-gnu \<br/>
+--enable-luainterp \<br/>
+--with-luajit \<br/>
+--enable-cscope \<br/>
+--enable-gui=auto \<br/>
+--with-features=huge \<br/>
+--with-x \<br/>
+--enable-fontset \<br/>
+--enable-largefile \<br/>
+--disable-netbeans \<br/>
+--with-compiledby="haoluo" \<br/>
+--enable-mzschemeinterp \<br/>
+--enable-gui=gnome \<br/>
+--enable-terminal \<br/>
+--enable-xim \<br/>
+--enable-luainterp \<br/>
+--with-luajit \<br/>
+--enable-fail-if-missing
